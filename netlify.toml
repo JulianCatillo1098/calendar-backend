@@ -1,11 +1,17 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/auth/*"
+  to = "/.netlify/functions/server/api/auth/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "/api/*"
-  to = "/*"
+  from = "/api/events/*"
+  to = "/.netlify/functions/server/api/events/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
   force = true
