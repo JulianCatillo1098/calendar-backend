@@ -28,3 +28,9 @@ app.use('/api/events', require('./routes/events'));
 app.listen(process.env.PORT, () => {
   console.log(`servidor corriendo en puerto ${process.env.PORT}`);
 });
+
+//mi aplicacion 
+
+app.get("/",(req,res)=>{
+res.send("la pagina de inicio")
+})
