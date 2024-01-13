@@ -3,7 +3,7 @@
     
 
   "routes": [
-    { "src": "/api/auth/(.*)", "dest": "/rutes/auth.js" },
-    { "src": "/api/events/(.*)", "dest": "/rutes/events.js" }
+    { "src": "/api/auth/(.*)", "dest": "/routes/auth.js" },
+    { "src": "/api/events/(.*)", "dest": "/routes/events.js" }
   ]
 }
