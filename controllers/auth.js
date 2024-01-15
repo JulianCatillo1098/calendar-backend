@@ -5,10 +5,10 @@ const Usuario = require("../models/Usuario");
 const { generarJWT } = require("../helpers/jwt");
 
 const crearUsuario = async (req, res = response) => {
-  const { gmail, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    let usuario = await Usuario.findOne({ gmail });
+    let usuario = await Usuario.findOne({ email });
 
     if (usuario) {
       return res.status(400).json({
@@ -42,10 +42,10 @@ const crearUsuario = async (req, res = response) => {
 };
 
 const loginUsuario = async (req, res = response) => {
-  const { gmail, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const usuario = await Usuario.findOne({ gmail });
+    const usuario = await Usuario.findOne({ email });
 
     if (!usuario) {
       return res.status(400).json({
