@@ -20,7 +20,7 @@ router.post(
   "/new",
   [
     check("name", "El nombre debe ser obligatorio").not().isEmpty(),
-    check("gmail", "El gmail debe ser obligatorio").isEmail(),
+    check("email", "El email debe ser obligatorio").isEmail(),
     check("password", "La contraseña debe se mayor de 6 caracteres").isLength((min = 6)),
     valiodarCampos
   ],
@@ -30,7 +30,7 @@ router.post(
 router.post(
   "/",
   [
-    check("gmail", "El gmail debe ser obligatorio").isEmail(),
+    check("email", "El email debe ser obligatorio").isEmail(),
     check("password", "La contraseña debe se mayor de 6 caracteres").isLength(min = 6),
     valiodarCampos
   ],

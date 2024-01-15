@@ -6,7 +6,7 @@ const UsuarioSchema = Schema({
     required: true,
   },
 
-  gmail: {
+  email: {
     type: String,
     require: true,
     unique: true,
