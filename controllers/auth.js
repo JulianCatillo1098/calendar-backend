@@ -13,19 +13,21 @@ const crearUsuario = async (req, res = response) => {
     if (usuario) {
       return res.status(400).json({
         ok: false,
-        msg: "Ya existe un usuario con ese correo",
+        msg: "Ya existe un usuario con ese email",
       });
     }
     usuario = new Usuario(req.body);
+    console.log(usuario)
 
     const salt = bcrypt.genSaltSync();
+    console.log(salt)
     usuario.password = bcrypt.hashSync(password, salt);
-
+    console.log(usuario)
     await usuario.save();
 
     //generar tooken
     const token = await generarJWT(usuario.id, usuario.name);
-
+    console.log(token)
     res.status(201).json({
       ok: true,
       uid: usuario.id,
@@ -89,6 +91,8 @@ const revalidarToken =async (req,res = response) => {
  
   res.json({
     ok: true,
+    uid,
+    name,
     token
   });
 };
